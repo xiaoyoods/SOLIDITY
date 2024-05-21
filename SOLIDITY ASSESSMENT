@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.25;
+
+contract MyToken {
+    string public tokenName = "META";
+    string public tokenAbbrv ="MT";
+    uint public totalSupply = 0;
+    mapping(address => uint) public balances;
+
+    constructor(string memory _name, string memory _abbrv, uint _initialSupply) {
+        tokenName = _name;
+        tokenAbbrv = _abbrv;
+        totalSupply = _initialSupply;
+        balances[msg.sender] = _initialSupply; 
+    }
+
+    function mint(address _receiver, uint _value) external {
+        require(_value > 0, "Mint value must be greater than zero");
+        
+        totalSupply += _value;
+        balances[_receiver] += _value;
+    }
+
+    function burn(address _owner, uint _value) external {
+        require(_value > 0, "Burn value must be greater than zero");
+        require(balances[_owner] >= _value, "Insufficient balance");
+
+        totalSupply -= _value;
+        balances[_owner] -= _value;
+    }
+}
