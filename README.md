@@ -32,22 +32,6 @@ Eudes Martin M. Munoz @xiaoyoods
 
 ## License
 ### This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-1. Add your files to the staging area:
-    ```sh
-    git add .
-    ```
-
-2. Commit your changes:
-    ```sh
-    git commit -m "Initial commit with MyToken smart contract and README"
-    ```
-
-3. Push your changes to GitHub:
-    ```sh
-    git remote add origin https://github.com/xiaoyoods/SOLIDITY/blob/main/SOLIDITY%20ASSESSMENT
-    git push -u origin main
-    ```
-
+  
 
 
